@@ -20,5 +20,5 @@ jobs:
           aws-region: ap-northeast-1
           role-to-assume: arn:aws:iam::637423474569:role/ctf-q3-ops
           role-session-name: GitHubActions_s3_cp2
-          role-chaining: true # chainする設定を"true"で指定。
+          # role-chaining: true # chainする設定を"true"で指定。
       - run: aws secretsmanager get-secret-value --secret-id ctf/q3/flag
