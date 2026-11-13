@@ -15,11 +15,11 @@ jobs:
           role-to-assume: arn:aws:iam::637423474569:role/ctf-q3-ops
 
       - run: aws ssm get-parameter --name "/ctf/q3/hint"  
-      # - name: Configure other AWS Credentials via SwitchRole
-      #   uses: aws-actions/configure-aws-credentials@v4
-      #   with:
-      #     aws-region: ap-northeast-1
-      #     role-to-assume: arn:aws:iam::637423474569:policy/ctf-q3-ops-policy
-      #     role-external-id: "{一意のID}" # "sts:ExternalId"で指定したID
-      #     role-session-name: GitHubActions_s3_cp2
-      #     role-chaining: true # chainする設定を"true"で指定。
+      - name: Configure other AWS Credentials via SwitchRole
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ap-northeast-1
+          role-to-assume: arn:aws:iam::637423474569:role/ctf-q3-ops
+          role-external-id: "abc"
+          role-session-name: GitHubActions_s3_cp2
+          role-chaining: true # chainする設定を"true"で指定。
