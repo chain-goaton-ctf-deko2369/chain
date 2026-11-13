@@ -11,8 +11,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ap-northeast-1
-          # role-to-assume: arn:aws:iam::637423474569:role/ctf-q3-entry
-          role-to-assume: arn:aws:iam::637423474569:role/ctf-q3-ops
+          role-to-assume: arn:aws:iam::637423474569:role/ctf-q3-entry
 
       - run: aws ssm get-parameter --name "/ctf/q3/hint"  
       - name: Configure other AWS Credentials via SwitchRole
